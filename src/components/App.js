@@ -43,11 +43,38 @@ class App extends Component {
    }
 
   deleteTask = (id) => {
-    console.log("delete elementu o id " + id);
+    const tasks = [...this.state.tasks]; //dokładna kopia tablicy, która jest w state
+    const index = tasks.findIndex(task => task.id === id); //znalezienie elementu, który pasuje do klikniętej pozycji
+    tasks.splice(index, 1); //usuwanie znalezionego elementu
+
+    this.setState({
+      tasks
+    })
+
+    //DRUGA MOŻLIWOŚĆ Z METODĄ FILTRUJĄCĄ
+    // let tasks = [...this.state.tasks];
+    // tasks = tasks.filter(task => task.id !== id);
+
+    // this.setState({
+    //   tasks
+    // })
   }
 
   changeTaskStatus = (id) => {
     console.log("chcnge w stanie elementu o id " + id);
+
+    const tasks = Array.from(this.state.tasks);
+    tasks.forEach(task => {
+      if(task.id === id) {
+        tasks.active = false ;
+        tasks.finishDate = new Date().getTime()
+      }
+    })
+
+    this.setState({
+      tasks
+    })
+    console.log(tasks)
   }
 
 
