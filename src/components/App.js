@@ -13,7 +13,7 @@ class App extends Component {
         date: '2020-06-15',
         important: true,
         active: true,
-        finishDate: null
+        finishDate: true
       },
       {
         id: 1,
@@ -21,7 +21,7 @@ class App extends Component {
         date: '2020-02-14',
         important: true,
         active: true,
-        finishDate: null
+        finishDate: true
       },
       {
         id: 2,
@@ -29,15 +29,31 @@ class App extends Component {
         date: '2020-12-31',
         important: true,
         active: true,
-        finishDate: null
+        finishDate: true
       },
       {
         id: 3,
         text: 'zjeść obiad',
         date: '2020-01-16',
+        important: false,
+        active: true,
+        finishDate: true
+      },
+      {
+        id: 4,
+        text: 'wypić kawę',
+        date: '2020-01-16',
+        important: false,
+        active: true,
+        finishDate: true
+      },
+      {
+        id: 5,
+        text: 'tiru-riru',
+        date: '2020-03-08',
         important: true,
         active: true,
-        finishDate: null
+        finishDate: true
       },
     ]
    }
@@ -61,13 +77,13 @@ class App extends Component {
   }
 
   changeTaskStatus = (id) => {
-    console.log("chcnge w stanie elementu o id " + id);
+    console.log("change w stanie elementu o id " + id);
 
     const tasks = Array.from(this.state.tasks);
     tasks.forEach(task => {
       if(task.id === id) {
-        tasks.active = false ;
-        tasks.finishDate = new Date().getTime()
+        task.active = false ;
+        task.finishDate = new Date().getTime();
       }
     })
 
