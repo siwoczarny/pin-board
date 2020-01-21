@@ -11,7 +11,7 @@ class App extends Component {
       {
         id: 0,
         text: 'zagrać Schumanna',
-        date: '2020-06-15',
+        date: '15.05.2020',
         important: true,
         active: true,
         finishDate: true
@@ -99,7 +99,7 @@ class App extends Component {
       id: this.counter,
       text, //1 input
       date, //2 input
-      important,  //3 input
+      important, //3 input
       active: true,
       finishDate: true
     }
@@ -115,7 +115,7 @@ class App extends Component {
   render() { 
     return ( 
       <div className="App">
-        <h1>ToDo App</h1>
+        <h1>Lista "do zrobienia"</h1>
         <AddTask add={this.addTask} />
         <TaskList tasks={this.state.tasks} delete={this.deleteTask} change={this.changeTaskStatus} />
       </div>

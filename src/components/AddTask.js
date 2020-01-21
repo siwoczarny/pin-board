@@ -29,6 +29,8 @@ class AddTask extends Component {
         })
     }
 
+    // contDate = new Date().toLocaleTimeString
+
     handleClick = () => {
 
         const {text, date, checked} = this.state;

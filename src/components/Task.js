@@ -22,7 +22,7 @@ const Task = (props) => {
         );
     } else {
 
-        const finish = new Date(finishDate).toLocaleString();
+        const finish = new Date(finishDate).toISOString().slice(0, 10);
         return (
          <div>
             <p>
