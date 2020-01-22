@@ -27,10 +27,11 @@ p button:hover {
 }
 
 .task {
+    display: inline-block;
     width: max-content;
     text-align: center;
     padding: 8px;
-    margin-bottom: 8px;
+    margin: 8px;
     background-color: #fffa8a;
     color: #696969;
 }
