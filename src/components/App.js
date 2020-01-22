@@ -7,57 +7,8 @@ class App extends Component {
 
   counter = 6
   state = { 
-    tasks: [
-      {
-        id: 0,
-        text: 'zagrać Schumanna',
-        date: '15.05.2020',
-        important: true,
-        active: true,
-        finishDate: true
-      },
-      {
-        id: 1,
-        text: 'kupić kwiaty Werci',
-        date: '2020-02-14',
-        important: true,
-        active: true,
-        finishDate: true
-      },
-      {
-        id: 2,
-        text: 'umówić sylwestra',
-        date: '2020-12-31',
-        important: true,
-        active: true,
-        finishDate: true
-      },
-      {
-        id: 3,
-        text: 'zjeść obiad',
-        date: '2020-01-16',
-        important: false,
-        active: true,
-        finishDate: true
-      },
-      {
-        id: 4,
-        text: 'wypić kawę',
-        date: '2020-01-16',
-        important: false,
-        active: true,
-        finishDate: true
-      },
-      {
-        id: 5,
-        text: 'tiru-riru',
-        date: '2020-03-08',
-        important: true,
-        active: true,
-        finishDate: true
-      },
-    ]
-   }
+    tasks: []
+  }
 
   deleteTask = (id) => {
     const tasks = [...this.state.tasks]; //dokładna kopia tablicy, która jest w state
@@ -115,8 +66,13 @@ class App extends Component {
   render() { 
     return ( 
       <div className="App">
-        <h1>Lista "do zrobienia"</h1>
+        <header>
+          <h1>Lista "do zrobienia"</h1>
+          <h2>Przypomni o wszystkim</h2>
+        </header>
+        <hr />
         <AddTask add={this.addTask} />
+        <hr />
         <TaskList tasks={this.state.tasks} delete={this.deleteTask} change={this.changeTaskStatus} />
       </div>
     );

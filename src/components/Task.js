@@ -3,16 +3,16 @@ import React from 'react';
 const Task = (props) => {
 
     const style = {
-        color: 'red',
+        color: '#fa3232',
     }
 
     const { text, date, id, active, important, finishDate } = props.task;
 
     if(active) {
         return ( 
-            <div>
+            <div className="task">
                 <p>
-                    <strong style={important ? style : null}>{text}</strong><em> - do <span>{date} </span></em>
+                    <strong style={important ? style : null}>{text}</strong> - do <span>{date} </span><br />
                     <button onClick={() => props.change(id)}> Zrobione!</button>
                     <button onClick={() => props.delete(id)}> Skasuj</button>
                 </p>
@@ -24,11 +24,11 @@ const Task = (props) => {
 
         const finish = new Date(finishDate).toISOString().slice(0, 10);
         return (
-         <div>
+         <div className="task">
             <p>
-                <strong>{text}</strong><em> - do <span>{date} </span></em>
+                <strong>{text}</strong> - do <span>{date}</span><br />
+                /potwierdzenie wykonania <span>{finish}/</span><br />
                 <button onClick={() => props.delete(id)}> Skasuj</button><br/>
-                /potwierdzenie wykonania <span>{finish}/</span>
             </p>
          </div>
         )

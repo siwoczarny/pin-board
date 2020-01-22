@@ -1,5 +1,6 @@
 import React from 'react';
 import Task from './Task';
+import "./TaskList.css";
 
 const TaskList = (props) => {
 
@@ -43,19 +44,16 @@ const TaskList = (props) => {
     const doneTasks = done.map(task => <Task key={task.id} task={task} delete={props.delete} change={props.change} />);
 
     return ( 
-        <>
+        <div className="list">
             <div className="active" >
-                <h2>Zadania do zrobienia [{active.length}]</h2>
+                <h3>Zadania do zrobienia [{active.length}]</h3>
                 {activeTasks.length > 0 ? activeTasks : <p>Brak zadań do zrobienia</p>}
             </div>
-
-            <hr />
-
             <div className="done" >
                 <h3>Zadania zrobione [{done.length}]</h3>
                 {doneTasks}
             </div>
-        </>
+        </div>
      );
 }
  

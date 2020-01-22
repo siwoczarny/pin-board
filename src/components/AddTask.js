@@ -4,6 +4,7 @@ import './AddTask.css';
 
 class AddTask extends Component {
     
+    currentDate = new Date().toLocaleDateString();
     minDate = new Date().toISOString().slice(0,10);
     state = { 
         text: '',
@@ -56,12 +57,14 @@ class AddTask extends Component {
         maxDate = maxDate + "-12-31";
         return ( 
             <div className="form" >
-                <input type="text" placeholder="Dodaj zadanie" value={this.state.text} onChange={this.handleText} />
-                <input type="checkbox" checked={this.state.checked} onChange={this.handleCheckbox} id="important"/>
-                <label htmlFor="important">Priorytet</label><br/>
-                <label htmlFor="date">Czas wykonania</label>
+                <p>Dzisiejsza data: {this.currentDate}</p>
+                <label htmlFor="text">Dodaj zadanie:</label><br/>
+                <input type="text" placeholder="np. wynieść śmieci" value={this.state.text} onChange={this.handleText} /><br />
+                <label htmlFor="important" id="important">Priorytet</label>
+                <input type="checkbox" checked={this.state.checked} onChange={this.handleCheckbox} id="important"/><br />
+                <label htmlFor="date">Termin wykonania:</label><br />
                 <input type="date" value={this.state.date} min={this.minDate} max={maxDate} onChange={this.handleDate}/><br/>
-                <button onClick={this.handleClick}>Dodaj</button>
+                <button onClick={this.handleClick}>Dodaj zadanie</button>
             </div>
          );
     }
