@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import AddTask from './AddTask';
 import TaskList from './TaskList';
-import './App.css';
+import '../styles/App.scss';
 
 class App extends Component {
 

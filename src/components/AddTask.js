@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import './AddTask.css';
+import '../styles/AddTask.scss';
 
 
 class AddTask extends Component {
@@ -60,8 +60,8 @@ class AddTask extends Component {
                 <p>Dzisiejsza data: {this.currentDate}</p>
                 <label htmlFor="text">Dodaj zadanie:</label><br/>
                 <input type="text" placeholder="np. wynieść śmieci" value={this.state.text} onChange={this.handleText} /><br />
-                <label htmlFor="important" id="important">Priorytet</label>
-                <input type="checkbox" checked={this.state.checked} onChange={this.handleCheckbox} id="important"/><br />
+                <label htmlFor="important" className="important">Priorytet</label>
+                <input type="checkbox" checked={this.state.checked} onChange={this.handleCheckbox} id="important" className="important" /><br />
                 <label htmlFor="date">Termin wykonania:</label><br />
                 <input type="date" value={this.state.date} min={this.minDate} max={maxDate} onChange={this.handleDate}/><br/>
                 <button onClick={this.handleClick}>Dodaj zadanie</button>
