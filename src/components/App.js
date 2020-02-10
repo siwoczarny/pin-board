@@ -67,7 +67,7 @@ class App extends Component {
     return ( 
       <div className="App">
         <header>
-          <h1>Lista "do zrobienia"</h1>
+          <h1>Tablica korkowa</h1>
           <h2>Przypomni o wszystkim</h2>
         </header>
         <hr />
